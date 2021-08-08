@@ -1,5 +1,4 @@
 package life.majiang.community.community.provider;
-
 import com.alibaba.fastjson.JSON;
 import life.majiang.community.community.dto.AccessTokenDTO;
 import life.majiang.community.community.dto.GithubUser;
@@ -32,7 +31,7 @@ public class GithubProvider {
     public GithubUser getUser(String accessToken){
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("http://api.github.com/user?access_token"+accessToken)
+                .url("https://api.github.com/user")
                 .header("Authorization", "token " + accessToken)
                 .build();
         try {
